@@ -10,8 +10,8 @@ COPY package*.json ./
 # Install production dependencies only
 RUN npm install --production
 
-# Copy source code
-COPY . .
+# Copy backend source code
+COPY server/ .
 
 # Expose backend port (change if needed)
 EXPOSE 5000
