@@ -4,8 +4,8 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /app
 
-# Copy dependency files first
-COPY package*.json ./
+# Copy backend dependency files first
+COPY server/package*.json ./
 
 # Install production dependencies only
 RUN npm install --production
