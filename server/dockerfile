@@ -9,8 +9,8 @@ WORKDIR /app
 # Copy dependency definitions
 COPY package*.json ./
 
-# Install only production dependencies
-RUN npm install --only=production
+# Install production dependencies ignoring peer conflicts
+RUN npm install --only=production --legacy-peer-deps
 
 # Copy backend source
 COPY . .
