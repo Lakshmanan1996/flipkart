@@ -7,6 +7,13 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
+
+# Set legacy OpenSSL for Node 18+
+ENV NODE_OPTIONS=--openssl-legacy-provider
+
+# Disable CI strict warnings (optional, if you have React warnings)
+ENV CI=false
+
 RUN npm run build
 
 # ---------- Production Stage ----------
