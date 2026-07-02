@@ -3,9 +3,9 @@ FROM node:20 AS build
 
 WORKDIR /app
 COPY package*.json ./
-RUN npm install --legacy-peer-deps
+
 COPY . .
-RUN NODE_OPTIONS=--openssl-legacy-provider npm run build
+RUN npm install --legacy-peer-deps --omit=dev
 
 # Runtime stage
 FROM node:20-alpine
