@@ -33,19 +33,14 @@ pipeline {
         }
 
 
-        stage('Stash Source') {
-            
-            steps {
-                stash includes: '**/*', name: 'source-code'
-            }
-        }
+      
 
 
         /* ===================== Build Stage ===================== */
         stage('Build') {
 
             steps {
-                unstash 'source-code'
+               
                 
                 dir('client') {
                     sh 'npm install'
@@ -65,7 +60,7 @@ pipeline {
         stage('SonarQube Analysis') {
             
             steps {
-                unstash 'source-code'
+              
                 script {
                     def scannerHome = tool 'SonarQubeScanner'
                     
@@ -103,7 +98,7 @@ pipeline {
         stage('Docker Build') {
             
             steps {
-                unstash 'source-code'
+               
                 
                 echo "Build a image for client-service"
                 
