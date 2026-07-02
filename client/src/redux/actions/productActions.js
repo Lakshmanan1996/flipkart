@@ -4,7 +4,7 @@ import axios from 'axios';
 export const getProducts = () => async (dispatch) => {
     try {
         console.log('Hiiiiii')
-        const { data } = await axios.get(`http://localhost:8000/products`);
+        const { data } = await axios.get(`/api/products`);
         dispatch({ type: actionTypes.GET_PRODUCTS_SUCCESS, payload: data });
 
     } catch (error) {
