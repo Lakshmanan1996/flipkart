@@ -34,7 +34,7 @@ pipeline {
 
 
         stage('Stash Source') {
-            agent { label 'workernode1' }
+            
             steps {
                 stash includes: '**/*', name: 'source-code'
             }
