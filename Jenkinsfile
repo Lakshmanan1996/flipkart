@@ -105,7 +105,7 @@ pipeline {
             steps {
                 unstash 'source-code'
                 
-                echo "Build a image for clinet-service"
+                echo "Build a image for client-service"
                 
                 dir('client') {
                 sh """
