@@ -9,7 +9,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --legacy-peer-deps
 COPY . .
-RUN npm run build
+RUN NODE_OPTIONS=--openssl-legacy-provider npm run build
 
 # Runtime stage
 FROM nginx:alpine
