@@ -47,12 +47,12 @@ pipeline {
             steps {
                 unstash 'source-code'
                 
-                dir('frontend') {
+                dir('client') {
                     sh 'npm install'
                     sh 'npm run build'
                 }
                 
-                dir('backend') {
+                dir('server') {
                     sh 'npm install'
                 }
             }
@@ -74,7 +74,7 @@ pipeline {
                         ${scannerHome}/bin/sonar-scanner \
                           -Dsonar.projectKey=flipkart \
                           -Dsonar.projectName=flipkart \
-                          -Dsonar.sources=backend,frontend \
+                          -Dsonar.sources=client,server \
                           -Dsonar.exclusions=**/node_modules/**
                         """
                     }
