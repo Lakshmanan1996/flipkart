@@ -43,12 +43,12 @@ pipeline {
                
                 
                 dir('client') {
-                    sh 'npm install'
+                    sh 'npm install --legacy-peer-deps'                  
                     sh 'npm run build'
                 }
                 
                 dir('server') {
-                    sh 'npm install'
+                    sh 'npm install --legacy-peer-deps'
                 }
             }
         }
