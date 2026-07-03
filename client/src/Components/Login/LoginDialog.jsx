@@ -72,8 +72,8 @@ const loginInitialValues = {
 };
 
 const signupInitialValues = {
-    firstname: '',
-    lastname: '',
+    firstName: '',
+    lastName: '',
     username: '',
     email: '',
     password: '',
@@ -160,8 +160,8 @@ const LoginDialog = ({ open, setOpen, setAccount }) => {
                             <Typography className={classes.createText} onClick={() => toggleSignup()}>New to Flipkart? Create an account</Typography>
                         </Box> : 
                         <Box className={classes.login}>
-                            <TextField onChange={(e) => onInputChange(e)} name='firstname' label='Enter Firstname' />
-                            <TextField onChange={(e) => onInputChange(e)} name='lastname' label='Enter Lastname' />
+                            <TextField onChange={(e) => onInputChange(e)} name='firstName' label='Enter firstName' />
+                            <TextField onChange={(e) => onInputChange(e)} name='lastName' label='Enter lastName' />
                             <TextField onChange={(e) => onInputChange(e)} name='username' label='Enter Username' />
                             <TextField onChange={(e) => onInputChange(e)} name='email' label='Enter Email' />
                             <TextField onChange={(e) => onInputChange(e)} name='password' label='Enter Password' />
