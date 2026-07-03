@@ -1,14 +1,13 @@
 import mongoose from 'mongoose';
 
-const Connection = async (username, password) => {
-        const URL = `mongodb+srv://${username}:${password}@cluster0.ho6r0xm.mongodb.net/flipkart?retryWrites=true&w=majority`;
+const Connection = async () => {
+    const URL = process.env.DB_CONNECTION;
     try {
         await mongoose.connect(URL, { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false });
-        console.log('Database Connected Succesfully');
-    } catch(error) {
+        console.log('Database Connected Successfully');
+    } catch (error) {
         console.log('Error: ', error.message);
     }
-
 };
 
 export default Connection;
