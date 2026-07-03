@@ -1,19 +1,19 @@
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-    firstname: {
+    firstName: {
         type: String,
         required: true,
         trim: true,
-        min: 5,
-        max: 20
+        minlength: 5,
+        maxlength: 20
     },
-    lastname: {
+    lastName: {
         type: String,
         required: true,
         trim: true,
-        min: 5,
-        max: 20
+        minlength: 5,
+        maxlength: 20
     },
     username: {
         type: String,
